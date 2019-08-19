@@ -23,7 +23,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this enumeration to set the <xref:System.Security.Permissions.MediaPermissionAudio> property of the <xref:System.Security.Permissions.MediaPermission> class. The default is SafeAudio.  
+ Use this enumeration to set the <xref:System.Security.Permissions.MediaPermissionAudio> property of the <xref:System.Security.Permissions.MediaPermission> class. The default is AllAudio.  
   
    
   

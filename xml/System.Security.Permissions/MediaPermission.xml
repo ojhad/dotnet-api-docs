@@ -28,7 +28,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>The <see cref="T:System.Security.Permissions.MediaPermission" /> describes a set of security permissions that controls the ability for audio, image, and video media to work in a partial-trust Windows Presentation Foundation (WPF) application.</summary>
+    <summary>The <see cref="T:System.Security.Permissions.MediaPermission" /> is a hollowed out class that used to describe a set of security permissions that used to control the ability for audio, image, and video media to work in a partial-trust Windows Presentation Foundation (WPF) application.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -300,7 +300,7 @@
         <ReturnType>System.Security.Permissions.MediaPermissionAudio</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the current value of the audio permission level.</summary>
+        <summary>Gets MediaPermissionAudio.AllAudio.</summary>
         <value>The audio permission level.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -337,16 +337,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Creates and returns an identical copy of the current permission.</summary>
-        <returns>A copy of the current permission.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- A copy of a permission represents the same access to resources as the original permission.  
-  
- ]]></format>
-        </remarks>
+        <summary>Creates and returns an default initialized MediaPermission object.</summary>
+        <returns>Default initialized MediaPermission object.</returns>
       </Docs>
     </Member>
     <Member MemberName="FromXml">
@@ -373,8 +365,7 @@
       </Parameters>
       <Docs>
         <param name="securityElement">The XML encoding to use to reconstruct the permission.</param>
-        <summary>Reconstructs a permission with a specified state from an XML encoding.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Does Nothing.</summary>
       </Docs>
     </Member>
     <Member MemberName="Image">
@@ -403,7 +394,7 @@
         <ReturnType>System.Security.Permissions.MediaPermissionImage</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the current value of the image permission level.</summary>
+        <summary>Gets MediaPermissionImage.AllImage</summary>
         <value>The image permission level.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -442,10 +433,9 @@
         <Parameter Name="target" Type="System.Security.IPermission" />
       </Parameters>
       <Docs>
-        <param name="target">A permission to intersect with the current permission. It must be of the same type as the current permission.</param>
-        <summary>Creates and returns a permission that is the intersection of the current permission and the specified permission.</summary>
-        <returns>The intersection of two permissions is a permission that describes the state that they both describe in common. Only a demand that passes both original permissions will be valid for the intersected permission.</returns>
-        <remarks>To be added.</remarks>
+        <param name="target">A object of type IPermission.</param>
+        <summary>Creates and returns an default initialized MediaPermission object.</summary>
+        <returns>Default initialized MediaPermission object.</returns>
       </Docs>
     </Member>
     <Member MemberName="IsSubsetOf">
@@ -472,20 +462,10 @@
         <Parameter Name="target" Type="System.Security.IPermission" />
       </Parameters>
       <Docs>
-        <param name="target">A permission that is to be tested for the subset relationship. This permission must be of the same type as the current permission.</param>
-        <summary>Determines whether the current permission is a subset of the specified permission.</summary>
+        <param name="target">A object of type IPermission.</param>
+        <summary>Always returns true.</summary>
         <returns>
-          <see langword="true" /> if the current permission is a subset of the specified permission; otherwise, <see langword="false" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The current permission is a subset of the specified permission if the current permission specifies a set of operations that is wholly contained by the specified permission. For example, a permission that represents access to C:\example.txt is a subset of a permission that represents access to C:\\.  
-  
- If this method returns `true`, the current permission represents no more access to the protected resource than does the specified permission.  
-  
- ]]></format>
-        </remarks>
+          <see langword="true" /></returns>
       </Docs>
     </Member>
     <Member MemberName="IsUnrestricted">
@@ -518,9 +498,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Returns a value indicating whether the current permission is unrestricted.</summary>
+        <summary>Always returns true.</summary>
         <returns>
-          <see langword="true" /> if the audio, image, and video permissions are all unrestricted; otherwise, <see langword="false" />.</returns>
+          <see langword="true" /></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -561,9 +541,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Creates an XML encoding of the permission and its current state.</summary>
-        <returns>An XML encoding of the permission, including any state information.</returns>
-        <remarks>To be added.</remarks>
+        <summary>Returns default initialized SecurityElement object.</summary>
+        <returns>default initialized SecurityElement object.</returns>
       </Docs>
     </Member>
     <Member MemberName="Union">
@@ -590,10 +569,9 @@
         <Parameter Name="target" Type="System.Security.IPermission" />
       </Parameters>
       <Docs>
-        <param name="target">A permission to combine with the current permission. It must be of the same type as the current permission.</param>
-        <summary>Creates a permission that is the union of the current permission and the specified permission.</summary>
-        <returns>A new permission that represents the union of the current permission and the specified permission.</returns>
-        <remarks>To be added.</remarks>
+        <param name="target">A object of type IPermission.</param>
+        <summary>Creates and returns an default initialized MediaPermission object.</summary>
+        <returns>Default initialized MediaPermission object.</returns>
       </Docs>
     </Member>
     <Member MemberName="Video">
@@ -622,7 +600,7 @@
         <ReturnType>System.Security.Permissions.MediaPermissionVideo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the current value of the video permission level.</summary>
+        <summary>Gets MediaPermissionVideo.AllVideo.</summary>
         <value>The media permission level.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
