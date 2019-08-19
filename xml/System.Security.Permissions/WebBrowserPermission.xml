@@ -28,12 +28,9 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>The <see cref="T:System.Security.Permissions.WebBrowserPermission" /> object controls the ability to create the WebBrowser control.</summary>
+    <summary>The <see cref="T:System.Security.Permissions.WebBrowserPermission" /> class is a hollowed out class with no security functionality.</summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- In the Windows Presentation Foundation (WPF), the Web browser control enables frames to navigate HTML. This permission uses the values of the <xref:System.Security.Permissions.WebBrowserPermission> enumerations.  
+      <format type="text/markdown"><![CDATA[   
   
 ## XAML Attribute Usage  
  This class is not typically used in XAML.  
@@ -74,7 +71,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- By default, the value of the <xref:System.Security.Permissions.WebBrowserPermission.Level%2A> property is set to <xref:System.Security.Permissions.WebBrowserPermissionLevel.Safe>.  
+ By default, the value of the <xref:System.Security.Permissions.WebBrowserPermission.Level%2A> property is set to <xref:System.Security.Permissions.WebBrowserPermissionLevel.Unrestricted>.  
   
  ]]></format>
         </remarks>
@@ -102,13 +99,12 @@
       </Parameters>
       <Docs>
         <param name="state">An enumerated value of <see cref="T:System.Security.Permissions.PermissionState" />.</param>
-        <summary>Initializes a new instance of the <see cref="T:System.Security.Permissions.WebBrowserPermission" /> class by specifying a permission state.</summary>
+        <summary>Initializes a new default instance of the <see cref="T:System.Security.Permissions.WebBrowserPermission" /> class.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If `state` is set to <xref:System.Security.Permissions.PermissionState.Unrestricted>, the value of the <xref:System.Security.Permissions.WebBrowserPermission.Level%2A> property is set to <xref:System.Security.Permissions.WebBrowserPermissionLevel.Unrestricted>. If `state` is set to <xref:System.Security.Permissions.PermissionState.None>, the value of the <xref:System.Security.Permissions.WebBrowserPermission.Level%2A> property is set to <xref:System.Security.Permissions.WebBrowserPermissionLevel.None>.  
-  
+ The value of the <xref:System.Security.Permissions.WebBrowserPermission.Level%2A> property is always set to <xref:System.Security.Permissions.WebBrowserPermissionLevel.Unrestricted>.
    
   
 ## Examples  
@@ -142,7 +138,7 @@
       </Parameters>
       <Docs>
         <param name="webBrowserPermissionLevel">An enumerated value of <see cref="T:System.Security.Permissions.WebBrowserPermissionLevel" />.</param>
-        <summary>Initializes a new instance of the <see cref="T:System.Security.Permissions.WebBrowserPermission" /> class by specifying the Web browser permission level.</summary>
+        <summary>Initializes a new deafult instance of the <see cref="T:System.Security.Permissions.WebBrowserPermission" /> class.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -178,8 +174,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Creates and returns an identical copy of the current permission.</summary>
-        <returns>A copy of the current permission.</returns>
+        <summary>Creates and returns a default initialized <see cref="T:System.Security.Permissions.WebBrowserPermission" />.</summary>
+        <returns>A default initialized <see cref="T:System.Security.Permissions.WebBrowserPermission" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -217,7 +213,7 @@
       </Parameters>
       <Docs>
         <param name="securityElement">The XML encoding to use to reconstruct the permission.</param>
-        <summary>Reconstructs a permission with a specified state from an XML encoding.</summary>
+        <summary>Creates and returns a default initialized <see cref="T:System.Security.SecurityElement" />.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -255,8 +251,8 @@
       </Parameters>
       <Docs>
         <param name="target">A permission to intersect with the current permission. It must be of the same type as the current permission.</param>
-        <summary>Creates and returns a permission that is the intersection of the current permission and the specified permission.</summary>
-        <returns>The intersection of two permissions is a permission that describes the state that they both describe in common. Only a demand that passes both original permissions will be valid for the intersected permission.</returns>
+        <summary>Creates and returns a default initialized <see cref="T:System.Security.Permissions.WebBrowserPermission" />.</summary>
+        <returns>A default initialized <see cref="T:System.Security.Permissions.WebBrowserPermission" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -294,16 +290,14 @@
       </Parameters>
       <Docs>
         <param name="target">A permission that is to be tested for the subset relationship. This permission must be of the same type as the current permission.</param>
-        <summary>Determines whether the current permission is a subset of the specified permission.</summary>
+        <summary>Returns true.</summary>
         <returns>
-          <see langword="true" /> if the current permission is a subset of the specified permission; otherwise, <see langword="false" />.</returns>
+          <see langword="true" /> always.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The current permission is a subset of the specified permission if the current permission specifies a set of operations that is wholly contained by the specified permission. For example, a permission that represents access to C:\example.txt is a subset of a permission that represents access to C:\\.  
-  
- If this method returns `true`, the current permission represents no more access to the protected resource than does the specified permission.  
+ This method always returns `true`. 
   
 ## XAML Attribute Usage  
  Members of this class are either not typically used in XAML, or cannot be used in XAML.  
@@ -339,7 +333,7 @@
       <Docs>
         <summary>Returns a value indicating whether the current permission is unrestricted.</summary>
         <returns>
-          <see langword="true" /> if the <see cref="P:System.Security.Permissions.WebBrowserPermission.Level" /> property is set to <see cref="F:System.Security.Permissions.WebBrowserPermissionLevel.Unrestricted" />; otherwise, <see langword="false" />.</returns>
+          <see langword="true" /> always.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -387,7 +381,7 @@
         <ReturnType>System.Security.Permissions.WebBrowserPermissionLevel</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets or sets the current value of the Web browser permission level.</summary>
+        <summary>Gets <see cref="T:System.Security.Permissions.WebBrowserPermissionLevel.Unrestricted" />. Setter does nothing.</summary>
         <value>The current value of the Web browser permission level.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -431,8 +425,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Creates an XML encoding of the permission and its current state.</summary>
-        <returns>An XML encoding of the permission, including any state information.</returns>
+        <summary>Creates and returns a default initialized <see cref="T:System.Security.SecurityElement" />.</summary>
+        <returns>A default initialized <see cref="T:System.Security.SecurityElement" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -470,8 +464,8 @@
       </Parameters>
       <Docs>
         <param name="target">A permission to combine with the current permission. It must be of the same type as the current permission.</param>
-        <summary>Creates a permission that is the union of the current permission and the specified permission.</summary>
-        <returns>A new permission that represents the union of the current permission and the specified permission.</returns>
+        <summary>Creates and returns a default initialized <see cref="T:System.Security.Permissions.WebBrowserPermission" />.</summary>
+        <returns>A default initialized <see cref="T:System.Security.Permissions.WebBrowserPermission" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
